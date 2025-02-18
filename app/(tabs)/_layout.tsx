@@ -38,28 +38,6 @@ export default function TabLayout() {
             ),
           }}
         />
-        <Tabs.Screen
-          name="gesture"
-          options={{
-            title: "Gesture",
-            tabBarIcon: ({ color }) => (
-              <IconSymbol size={28} name="cursorarrow.click" color={color} />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="translateScreen"
-          options={{
-            title: "translateScreen",
-            tabBarIcon: ({ color }) => (
-              <IconSymbol
-                size={28}
-                name="swedishkronasign.arrow.circlepath"
-                color={color}
-              />
-            ),
-          }}
-        />
       </Tabs>
     </SafeAreaView>
   );

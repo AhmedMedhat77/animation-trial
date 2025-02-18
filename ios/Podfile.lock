@@ -19,6 +19,8 @@ PODS:
     - ExpoModulesCore
   - ExpoKeepAwake (14.0.2):
     - ExpoModulesCore
+  - ExpoLinearGradient (14.0.2):
+    - ExpoModulesCore
   - ExpoLinking (7.0.5):
     - ExpoModulesCore
   - ExpoModulesCore (2.2.0):
@@ -1815,6 +1817,7 @@ DEPENDENCIES:
   - "ExpoHaptics (from `../node_modules/.pnpm/expo-haptics@14.0.1_expo@52.0.30_@babel+core@7.26.7_@babel+preset-env@7.26.7_@babel+cor_999655635330e488fe1fe6009e86d690/node_modules/expo-haptics/ios`)"
   - "ExpoHead (from `../node_modules/.pnpm/expo-router@4.0.17_8b43b89b7e478b8533f0e04973ca6ed8/node_modules/expo-router/ios`)"
   - ExpoKeepAwake (from `../node_modules/expo-keep-awake/ios`)
+  - "ExpoLinearGradient (from `../node_modules/.pnpm/expo-linear-gradient@14.0.2_expo@52.0.30_@babel+core@7.26.7_@babel+preset-env@7.26.7_@b_dfb829dbaaefa1f22ffe1b016443be7c/node_modules/expo-linear-gradient/ios`)"
   - "ExpoLinking (from `../node_modules/.pnpm/expo-linking@7.0.5_expo@52.0.30_@babel+core@7.26.7_@babel+preset-env@7.26.7_@babel+core_97b0931f369c392eaa2ea50195c1980e/node_modules/expo-linking/ios`)"
   - ExpoModulesCore (from `../node_modules/expo-modules-core`)
   - "ExpoSplashScreen (from `../node_modules/.pnpm/expo-splash-screen@0.29.21_expo@52.0.30_@babel+core@7.26.7_@babel+preset-env@7.26.7_@ba_eaf257f404a77a837af99d150afe328f/node_modules/expo-splash-screen/ios`)"
@@ -1917,6 +1920,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/.pnpm/expo-router@4.0.17_8b43b89b7e478b8533f0e04973ca6ed8/node_modules/expo-router/ios"
   ExpoKeepAwake:
     :path: "../node_modules/expo-keep-awake/ios"
+  ExpoLinearGradient:
+    :path: "../node_modules/.pnpm/expo-linear-gradient@14.0.2_expo@52.0.30_@babel+core@7.26.7_@babel+preset-env@7.26.7_@b_dfb829dbaaefa1f22ffe1b016443be7c/node_modules/expo-linear-gradient/ios"
   ExpoLinking:
     :path: "../node_modules/.pnpm/expo-linking@7.0.5_expo@52.0.30_@babel+core@7.26.7_@babel+preset-env@7.26.7_@babel+core_97b0931f369c392eaa2ea50195c1980e/node_modules/expo-linking/ios"
   ExpoModulesCore:
@@ -2075,6 +2080,7 @@ SPEC CHECKSUMS:
   ExpoHaptics: 8d199b2f33245ea85289ff6c954c7ee7c00a5b5d
   ExpoHead: 5d1c5c20e3933db5d9ca349424cb3b9a4a84b706
   ExpoKeepAwake: 62ff49bbc3bff90d8ee28329190f9ba371bf88e7
+  ExpoLinearGradient: 35ebd83b16f80b3add053a2fd68cc328ed927f60
   ExpoLinking: 8d12bee174ba0cdf31239706578e29e74a417402
   ExpoModulesCore: 231638400651045f797b1da72feccbd86f96dbf5
   ExpoSplashScreen: c64f3b577e1cb0b6a2f47d01c528ad7d80d9ae6a

@@ -19,7 +19,6 @@ interface SlidePageProps {
 }
 
 const SlideComponent = (props: SlidePageProps) => {
-  console.log(props.index, props.translateX.value);
   const inputRange = [
     (props.index - 1) * width,
     props.index * width,

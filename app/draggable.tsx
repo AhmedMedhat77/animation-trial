@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React from "react";
 import Animated, {
   useAnimatedStyle,
@@ -9,7 +9,7 @@ import { Gesture, GestureDetector } from "react-native-gesture-handler";
 const SIZE = 100;
 const circleRadius = (SIZE + 50) * 2;
 
-const gesture = () => {
+const draggable = () => {
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
 
@@ -52,7 +52,7 @@ const gesture = () => {
   );
 };
 
-export default gesture;
+export default draggable;
 
 const styles = StyleSheet.create({
   container: {

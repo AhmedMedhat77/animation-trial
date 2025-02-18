@@ -1,54 +1,92 @@
-import { View, Text } from "react-native";
-import React, { useEffect } from "react";
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withRepeat,
-  withSpring,
-  withTiming,
-} from "react-native-reanimated";
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import React from "react";
+import { Href, Link } from "expo-router";
 
 const SIZE = 100;
-
-const handleRotation = (progress: Animated.SharedValue<number>) => {
-  'worklet'
-  return `${progress.value * 2 * Math.PI}rad`;
-};
+const screens = [
+  {
+    title: "Basic",
+    path: "/basic",
+  },
+  {
+    title: "draggable",
+    path: "/draggable",
+  },
+  {
+    title: "Animated Scroll View",
+    path: "/animatedScrollView",
+  },
+  {
+    title: "animated Theme",
+    path: "/animatedTheme",
+  },
+  {
+    title: "doubleAndSingleTap",
+    path: "/doubleAndSingleTap",
+  },
+] as { title: string; path: Href }[];
 
 const index = () => {
-  const progress = useSharedValue(1);
-  const scale = useSharedValue(2);
-
-  const AnimatedStyle = useAnimatedStyle(() => {
-    return {
-      opacity: progress.value,
-      borderRadius: (progress.value * SIZE) / 2,
-      transform: [{ scale: scale.value }, { rotate: handleRotation(progress) }],
-    };
-  });
-
-  useEffect(() => {
-    progress.value = withRepeat(withSpring(0.5), 3, true);
-    scale.value = withRepeat(withSpring(2), 3, true);
-  }, []);
-
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: "#fff",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Animated.View
-        style={[
-          { width: SIZE, height: SIZE, backgroundColor: "blue" },
-          AnimatedStyle,
-        ]}
+    <View style={styles.container}>
+      <FlatList
+        keyExtractor={(item) => item.title}
+        data={screens}
+        numColumns={2}
+        contentContainerStyle={{
+          flex: 1,
+          gap: 20,
+        }}
+        renderItem={({ item }) => (
+          <Link href={item.path} asChild>
+            <TouchableOpacity style={styles.boxContainer}>
+              <Text
+                style={{
+                  textAlign: "center",
+                  fontWeight: "600",
+                  fontSize: 18,
+                  textTransform: "capitalize",
+                }}
+              >
+                {item.title}
+              </Text>
+            </TouchableOpacity>
+          </Link>
+        )}
       />
     </View>
   );
 };
 
 export default index;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#eee",
+    padding: 20,
+  },
+  boxContainer: {
+    width: SIZE * 1.2,
+    height: SIZE * 1.2,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 20,
+    borderWidth: 2,
+    marginHorizontal: 30,
+    borderColor: "#D7d7",
+    elevation: 4,
+    shadowColor: "#fff",
+    shadowOffset: {
+      width: 5,
+      height: 5,
+    },
+    padding: 10,
+  },
+});
