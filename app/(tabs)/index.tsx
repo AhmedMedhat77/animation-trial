@@ -1,10 +1,4 @@
-import {
-  FlatList,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Href, Link } from "expo-router";
 
@@ -29,6 +23,10 @@ const screens = [
   {
     title: "doubleAndSingleTap",
     path: "/doubleAndSingleTap",
+  },
+  {
+    title: "AnimatedCarousel",
+    path: "/animatedCarousel",
   },
 ] as { title: string; path: Href }[];
 
