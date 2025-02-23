@@ -28,6 +28,14 @@ const screens = [
     title: "AnimatedCarousel",
     path: "/animatedCarousel",
   },
+  {
+    title: "Test",
+    path: "/test",
+  },
+  {
+    title: "form",
+    path: "/form",
+  },
 ] as { title: string; path: Href }[];
 
 const index = () => {
