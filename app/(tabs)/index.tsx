@@ -40,6 +40,10 @@ const screens = [
     title: "AnimatedFlatList",
     path: "/animatedFlatList",
   },
+  {
+    title: "GalleryView",
+    path: "/galleryView",
+  },
 ] as { title: string; path: Href }[];
 
 const index = () => {
