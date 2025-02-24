@@ -36,6 +36,10 @@ const screens = [
     title: "form",
     path: "/form",
   },
+  {
+    title: "AnimatedFlatList",
+    path: "/animatedFlatList",
+  },
 ] as { title: string; path: Href }[];
 
 const index = () => {
