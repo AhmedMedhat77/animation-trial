@@ -38,3 +38,5 @@ yarn-error.*
 app-example
 
 .vscode
+android/
+ios/
