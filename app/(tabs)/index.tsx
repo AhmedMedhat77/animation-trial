@@ -16,6 +16,12 @@ const { width } = Dimensions.get("window");
 
 const screens = [
   {
+    title: "Reels",
+    path: "/(stack)/reel",
+    icon: "play-circle-outline",
+    color: "#FF4500",
+  },
+  {
     title: "Basic",
     path: "/(stack)/basic",
     icon: "play-circle-outline",
@@ -80,6 +86,18 @@ const screens = [
     path: "/(stack)/galleryView",
     icon: "library-outline",
     color: "#F8C471",
+  },
+  {
+    title: "Circular Status",
+    path: "/(stack)/circularStatus",
+    icon: "radio-button-on-outline",
+    color: "#25D366",
+  },
+  {
+    title: "Advanced Status",
+    path: "/(stack)/advancedCircularStatus",
+    icon: "pulse-outline",
+    color: "#128C7E",
   },
 ] as { title: string; path: Href; icon: string; color: string }[];
 
