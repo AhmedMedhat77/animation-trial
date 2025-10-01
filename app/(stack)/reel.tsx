@@ -1,9 +1,9 @@
 import { Image } from "expo-image";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Svg, { Circle, Defs, LinearGradient, Stop } from "react-native-svg";
+import Svg, { Circle, Defs, G, LinearGradient, Stop } from "react-native-svg";
 import Animated, { useAnimatedStyle } from "react-native-reanimated";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const StatusBorder = ({
   statusCount = 0,
@@ -121,6 +121,7 @@ const StatusBorder = ({
 
 const ReelScreen = () => {
   const [statusCount, setStatusCount] = useState(0);
+  const circleRef = useRef<Circle>(null);
 
   const addStatus = () => {
     setStatusCount((prev) => Math.min(prev + 1));
@@ -164,25 +165,25 @@ export default ReelScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#FFF",
     paddingHorizontal: 20,
     paddingTop: 60,
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#333",
+    color: "#000",
     textAlign: "center",
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 16,
-    color: "#666",
+    color: "#000",
     textAlign: "center",
     marginBottom: 30,
   },
   statusContainer: {
-    position: "relative",
+    // position: "relative",
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 40,

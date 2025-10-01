@@ -22,10 +22,10 @@ const screens = [
     color: "#FF4500",
   },
   {
-    title: "Basic",
-    path: "/(stack)/basic",
-    icon: "play-circle-outline",
-    color: "#FF6B6B",
+    title: "SVG",
+    path: "/(stack)/svg",
+    icon: "color-palette-outline",
+    color: "#FFEAA7",
   },
   {
     title: "OnBoarding",
@@ -98,6 +98,12 @@ const screens = [
     path: "/(stack)/advancedCircularStatus",
     icon: "pulse-outline",
     color: "#128C7E",
+  },
+  {
+    title: "Loading",
+    path: "/(stack)/loading",
+    icon: "refresh-outline",
+    color: "#667eea",
   },
 ] as { title: string; path: Href; icon: string; color: string }[];
 
