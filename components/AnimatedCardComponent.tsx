@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { item } from "@/app/animatedFlatList";
+import { item } from "@/app/(stack)/animatedFlatList";
 
 type AnimatedCardProps = {
   item: item;

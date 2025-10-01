@@ -31,7 +31,7 @@ const DoubleAndSingleTap = () => {
           }}
         >
           <Animated.Image
-            source={require("../assets/images/like-image.jpg")}
+            source={require("../../assets/images/like-image.jpg")}
             style={styles.image}
           />
         </TapGestureHandler>

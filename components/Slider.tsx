@@ -71,6 +71,7 @@ const Slider = ({ itemList }: Props) => {
       clearInterval(interval.current);
       interval.current = null;
     }
+
     return () => {
       if (interval.current) clearInterval(interval.current);
     };
