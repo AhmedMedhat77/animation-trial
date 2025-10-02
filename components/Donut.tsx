@@ -20,6 +20,7 @@ interface DonutProps {
   delay: number;
   textColor: string;
   max: number;
+  showText?: boolean;
 }
 
 const Donut = ({
@@ -31,6 +32,7 @@ const Donut = ({
   delay = 0,
   textColor = "#fff",
   max = 100,
+  showText = true,
 }: DonutProps) => {
   const halfCircle = radius + strokeWidth;
   const circumference = 2 * Math.PI * radius;
@@ -89,20 +91,22 @@ const Donut = ({
           />
         </G>
       </Svg>
-      <View style={styles.textContainer}>
-        <AnimatedTextInput
-          style={[
-            styles.text,
-            {
-              fontSize: radius / 2,
-              fontWeight: "900",
-              color: textColor || color,
-            },
-          ]}
-          animatedProps={animatedTextStyle as any}
-          value={`${percentage}%`}
-        />
-      </View>
+      {showText && (
+        <View style={styles.textContainer}>
+          <AnimatedTextInput
+            style={[
+              styles.text,
+              {
+                fontSize: radius / 2,
+                fontWeight: "900",
+                color: textColor || color,
+              },
+            ]}
+            animatedProps={animatedTextStyle as any}
+            value={`${percentage}%`}
+          />
+        </View>
+      )}
     </View>
   );
 };

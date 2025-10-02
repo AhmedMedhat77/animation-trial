@@ -20,7 +20,7 @@ const test = () => {
         percentage={40}
         radius={50}
         strokeWidth={10}
-        color="tomato"
+        color="yellow"
         duration={800}
         delay={200}
         textColor="#fff"

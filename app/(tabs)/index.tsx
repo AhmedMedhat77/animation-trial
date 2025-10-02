@@ -17,9 +17,15 @@ const { width } = Dimensions.get("window");
 
 const screens = [
   {
-    title: "Reels",
+    title: "Status",
     path: "/(stack)/reel",
-    icon: "play-circle-outline",
+    icon: "logo-whatsapp",
+    color: "#25D366",
+  },
+  {
+    title: "Video",
+    path: "/(stack)/video",
+    icon: "play-circle-sharp",
     color: "#FF4500",
   },
   {
