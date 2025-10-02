@@ -1,59 +1,31 @@
-import { Dimensions, StyleSheet, Text, View } from "react-native";
-import React from "react";
-import Animated, {
-  Easing,
-  useAnimatedStyle,
-  useSharedValue,
-  withRepeat,
-  withTiming,
-} from "react-native-reanimated";
-const { width } = Dimensions.get("window");
-const duration = 2000;
+import Donut from "@/components/Donut";
+import { StyleSheet, Text, View } from "react-native";
+import { useSharedValue } from "react-native-reanimated";
+import Svg, { Circle, G } from "react-native-svg";
+
+// Constants
+
+const CIRCLE = 200;
+const RADIUS = CIRCLE / 2;
+const STROKE_WIDTH = 5;
+const HALF_CIRCLE = RADIUS + STROKE_WIDTH;
+const DIAMETER = 2 * HALF_CIRCLE;
+const CIRCUMFERENCE = 3 * Math.PI * RADIUS;
 
 const test = () => {
-  const defaultAnim = useSharedValue<number>(width / 2 - 160);
-  const linear = useSharedValue<number>(width - 160);
-  const animatedWidth = useSharedValue(0);
-
-  const animatedDefault = useAnimatedStyle(() => ({
-    transform: [{ translateX: defaultAnim.value }],
-    width: animatedWidth.value,
-  }));
-  const animatedChanged = useAnimatedStyle(() => ({
-    transform: [{ translateX: linear.value }],
-  }));
-
-  React.useEffect(() => {
-    linear.value = withRepeat(
-      withTiming(-linear.value, {
-        duration,
-        easing: Easing.linear,
-      }),
-      -1,
-      true
-    );
-
-    animatedWidth.value = withRepeat(
-      withTiming(100, {
-        duration,
-        easing: Easing.linear,
-      }),
-      -1,
-      true
-    );
-    defaultAnim.value = withRepeat(
-      withTiming(-defaultAnim.value, {
-        duration,
-      }),
-      -1,
-      true
-    );
-  }, []);
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Animated.View style={[styles.box, animatedDefault]}>
-        <Text style={{ color: "#FFF" }}>Loading...</Text>
-      </Animated.View>
+    <View style={styles.container}>
+      <Text style={styles.text}>Themed Text and animated circles</Text>
+      <Donut
+        percentage={40}
+        radius={50}
+        strokeWidth={10}
+        color="tomato"
+        duration={800}
+        delay={200}
+        textColor="#fff"
+        max={100}
+      />
     </View>
   );
 };
@@ -61,12 +33,15 @@ const test = () => {
 export default test;
 
 const styles = StyleSheet.create({
-  box: {
-    width: 300,
-    height: 20,
-    borderWidth: 1,
-    borderColor: "violet",
+  container: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#000",
+  },
+  text: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold",
   },
 });

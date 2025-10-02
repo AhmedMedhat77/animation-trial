@@ -5,11 +5,12 @@ import Animated, {
   useSharedValue,
   withRepeat,
   withSpring,
+  SharedValue,
 } from "react-native-reanimated";
 
 const SIZE = 100;
 
-const handleRotation = (progress: Animated.SharedValue<number>) => {
+const handleRotation = (progress: SharedValue<number>) => {
   "worklet";
   return `${progress.value * 2 * Math.PI}rad`;
 };
@@ -41,10 +42,7 @@ const basic = () => {
       }}
     >
       <Animated.View
-        style={[
-          { width: SIZE, height: SIZE, backgroundColor: "blue" },
-          AnimatedStyle,
-        ]}
+        style={[{ width: SIZE, height: SIZE, backgroundColor: "blue" }, AnimatedStyle]}
       />
     </View>
   );

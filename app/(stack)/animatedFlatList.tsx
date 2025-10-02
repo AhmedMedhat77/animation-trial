@@ -4,8 +4,8 @@ import { faker } from "@faker-js/faker";
 import VerticalList from "@/components/VerticalList";
 
 const data = [...Array(20).keys()].map(() => ({
-  image: faker.image.urlLoremFlickr({}),
-  bg: faker.internet.color(),
+  image: faker.image.avatar(),
+  bg: faker.color.rgb(),
 
   title: faker.lorem.sentence({ min: 1, max: 2 }),
   description: faker.lorem.sentences({ min: 1, max: 3 }),

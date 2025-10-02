@@ -1,9 +1,6 @@
 import { StyleSheet } from "react-native";
-import React from "react";
-import Animated, {
-  useAnimatedScrollHandler,
-  useSharedValue,
-} from "react-native-reanimated";
+
+import Animated, { useAnimatedScrollHandler, useSharedValue } from "react-native-reanimated";
 import SlideComponent from "@/components/SlideComponent";
 
 const WORDS = ["What's", "UP", "User"];

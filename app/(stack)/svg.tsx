@@ -42,17 +42,6 @@ const svg = () => {
     });
   };
 
-  const getColorStyle = (index: number) => {
-    return useAnimatedStyle(() => {
-      const isActive = index === activeIndex.value % length;
-      const colors = ["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7"];
-
-      return {
-        backgroundColor: isActive ? colors[index] : "#e0e0e0",
-      };
-    });
-  };
-
   useEffect(() => {
     const interval = setInterval(() => {
       if (isAnimating.value) {

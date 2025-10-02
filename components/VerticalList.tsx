@@ -1,6 +1,7 @@
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { item } from "@/app/(stack)/animatedFlatList";
+import { FlashList } from "@shopify/flash-list";
 import Animated, {
   Extrapolation,
   interpolate,
@@ -9,6 +10,8 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
 } from "react-native-reanimated";
+
+const AnimatedFlashList = Animated.createAnimatedComponent(FlashList);
 
 interface VerticalListProps {
   data: item[];
@@ -89,7 +92,7 @@ const VerticalList = ({ data }: VerticalListProps) => {
   });
 
   return (
-    <Animated.FlatList
+    <AnimatedFlashList
       contentContainerStyle={{
         paddingHorizontal: _spacing * 3,
         paddingVertical: (height - _itemFullSize) / 2,
@@ -97,7 +100,7 @@ const VerticalList = ({ data }: VerticalListProps) => {
       }}
       data={data}
       renderItem={({ item, index }) => {
-        return <AnimatedCardComponent item={item} index={index} scrollY={scrollY} />;
+        return <AnimatedCardComponent item={item as item} index={index} scrollY={scrollY} />;
       }}
       snapToInterval={_itemFullSize}
       decelerationRate={"fast"}

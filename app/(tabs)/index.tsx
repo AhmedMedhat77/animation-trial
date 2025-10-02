@@ -11,6 +11,7 @@ import Animated, {
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 import { useEffect } from "react";
+import { GlyphMap } from "@expo/vector-icons/build/createIconSet";
 
 const { width } = Dimensions.get("window");
 
@@ -87,25 +88,25 @@ const screens = [
     icon: "library-outline",
     color: "#F8C471",
   },
-  {
-    title: "Circular Status",
-    path: "/(stack)/circularStatus",
-    icon: "radio-button-on-outline",
-    color: "#25D366",
-  },
-  {
-    title: "Advanced Status",
-    path: "/(stack)/advancedCircularStatus",
-    icon: "pulse-outline",
-    color: "#128C7E",
-  },
+
   {
     title: "Loading",
     path: "/(stack)/loading",
     icon: "refresh-outline",
     color: "#667eea",
   },
-] as { title: string; path: Href; icon: string; color: string }[];
+  {
+    title: "Test",
+    path: "/(stack)/test",
+    icon: "arrow-up-left-box" as keyof typeof Ionicons.glyphMap,
+    color: "#F5B041",
+  },
+] as {
+  title: string;
+  path: Href;
+  icon: keyof typeof Ionicons.glyphMap;
+  color: string;
+}[];
 
 const AnimatedCard = ({ item, index }: { item: (typeof screens)[0]; index: number }) => {
   const router = useRouter();
