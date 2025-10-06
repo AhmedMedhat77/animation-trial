@@ -119,6 +119,12 @@ const screens = [
     icon: "text-outline" as keyof typeof Ionicons.glyphMap,
     color: "#F5B041",
   },
+  {
+    title: "Chat",
+    path: "/(stack)/chat",
+    icon: "chatbox-outline" as keyof typeof Ionicons.glyphMap,
+    color: "#FF6B6B",
+  },
 ] as {
   title: string;
   path: Href;
