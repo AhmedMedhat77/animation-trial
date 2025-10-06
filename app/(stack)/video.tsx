@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { useState, useRef, Ref, useEffect } from "react";
 import { FlashList, FlashListProps, FlashListRef, ViewToken } from "@shopify/flash-list";
 
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
 import VideoComponent from "@/components/VideoComponent";
 
 const videoSource = [
@@ -14,6 +14,8 @@ const videoSource = [
     likes: 1234,
     comments: 56,
     shares: 89,
+    avatar: "https://i.pravatar.cc/150?img=1",
+    username: "John Doe",
   },
   {
     id: 2,
@@ -22,6 +24,8 @@ const videoSource = [
     likes: 2345,
     comments: 78,
     shares: 123,
+    avatar: "https://i.pravatar.cc/150?img=2",
+    username: "Jane Doe2",
   },
   {
     id: 3,
@@ -30,12 +34,15 @@ const videoSource = [
     likes: 3456,
     comments: 90,
     shares: 156,
+    avatar: "https://i.pravatar.cc/150?img=3",
+    username: "Jane Doe3",
   },
 ];
 
 export default function VideoScreen() {
   const [activeIndex, setActiveIndex] = useState(0);
   const flashListRef = useRef<FlashListProps<any>>(null);
+  const insets = useSafeAreaInsets();
 
   // Create players for each video
   const players = videoSource.map((video) =>
@@ -82,6 +89,9 @@ export default function VideoScreen() {
         comments={item.comments}
         shares={item.shares}
         title={item.title}
+        avatar={item.avatar}
+        username={item.username}
+        bottomInset={insets.bottom}
       />
     );
   };

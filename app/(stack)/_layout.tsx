@@ -1,10 +1,8 @@
-import { Slot, Stack } from "expo-router";
+import { Stack } from "expo-router";
 
 const StackLayout = () => {
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Slot />
-    </Stack>
+    <Stack screenOptions={{ headerShown: false }} />
   );
 };
 

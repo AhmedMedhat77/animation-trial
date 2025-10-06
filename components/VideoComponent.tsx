@@ -1,9 +1,9 @@
 import { Ionicons } from "@expo/vector-icons";
+import { Image } from "expo-image";
 import { VideoPlayer, VideoView } from "expo-video";
 import { useEffect, useRef, useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from "react-native";
 import Animated, { useSharedValue, useAnimatedStyle, withSpring } from "react-native-reanimated";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const { width, height } = Dimensions.get("window");
 
@@ -14,6 +14,9 @@ interface VideoComponentProps {
   comments: number;
   shares: number;
   title: string;
+  avatar: string;
+  username: string;
+  bottomInset?: number;
 }
 
 const VideoComponent = ({
@@ -23,6 +26,9 @@ const VideoComponent = ({
   comments,
   shares,
   title,
+  avatar,
+  username,
+  bottomInset = 0,
 }: VideoComponentProps) => {
   const videoRef = useRef<VideoView>(null);
   const [isLiked, setIsLiked] = useState(false);
@@ -49,7 +55,7 @@ const VideoComponent = ({
         nativeControls={true}
       />
       {/* Right side actions */}
-      <View style={styles.rightActions}>
+      <View style={[styles.rightActions, { bottom: 100 + bottomInset }]}>
         <TouchableOpacity
           style={styles.actionButton}
           onPress={() => {
@@ -86,11 +92,11 @@ const VideoComponent = ({
       </View>
 
       {/* Bottom info */}
-      <View style={styles.bottomInfo}>
+      <View style={[styles.bottomInfo, { bottom: 100 + bottomInset }]}>
         <Text style={styles.title}>{title}</Text>
         <View style={styles.userInfo}>
-          <View style={styles.avatar} />
-          <Text style={styles.username}>@username</Text>
+          <Image source={{ uri: avatar }} style={styles.avatar} />
+          <Text style={styles.username}>@{username}</Text>
         </View>
       </View>
     </View>
@@ -107,8 +113,8 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   video: {
+    height: height - 40,
     width: width - 10,
-    height: height,
   },
   title: {
     color: "white",
@@ -140,7 +146,6 @@ const styles = StyleSheet.create({
   rightActions: {
     position: "absolute",
     right: 15,
-    bottom: 100,
     alignItems: "center",
   },
   actionButton: {
@@ -155,7 +160,6 @@ const styles = StyleSheet.create({
   },
   bottomInfo: {
     position: "absolute",
-    bottom: 100,
     left: 15,
     right: 80,
   },

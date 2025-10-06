@@ -107,6 +107,18 @@ const screens = [
     icon: "arrow-up-left-box" as keyof typeof Ionicons.glyphMap,
     color: "#F5B041",
   },
+  {
+    title: "Progress",
+    path: "/(stack)/progress",
+    icon: "bar-chart-outline" as keyof typeof Ionicons.glyphMap,
+    color: "#45B7D1",
+  },
+  {
+    title: "Gradient Text",
+    path: "/(stack)/gradientText",
+    icon: "text-outline" as keyof typeof Ionicons.glyphMap,
+    color: "#F5B041",
+  },
 ] as {
   title: string;
   path: Href;
