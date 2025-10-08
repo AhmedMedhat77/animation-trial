@@ -11,6 +11,8 @@ const ChatScreen = () => {
   const [isSending, setIsSending] = useState(false);
   const ref = useRef<TextInput>(null);
 
+  // don't use css animation for gestures case gesture handle sharedValues
+
   const handleSend = () => {
     setIsSending(true);
 

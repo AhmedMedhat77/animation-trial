@@ -125,6 +125,12 @@ const screens = [
     icon: "chatbox-outline" as keyof typeof Ionicons.glyphMap,
     color: "#FF6B6B",
   },
+  {
+    title: "Skeletons",
+    path: "/(stack)/Skeletons",
+    icon: "skull-outline" as keyof typeof Ionicons.glyphMap,
+    color: "#FFC300",
+  },
 ] as {
   title: string;
   path: Href;
@@ -228,6 +234,7 @@ export default index;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingBottom: 100,
   },
   header: {
     paddingTop: 60,
