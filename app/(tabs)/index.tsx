@@ -131,6 +131,12 @@ const screens = [
     icon: "skull-outline" as keyof typeof Ionicons.glyphMap,
     color: "#FFC300",
   },
+  {
+    title: "Parallax",
+    path: "/(stack)/parallax",
+    icon: "parallax-outline" as keyof typeof Ionicons.glyphMap,
+    color: "#000000",
+  },
 ] as {
   title: string;
   path: Href;
@@ -234,7 +240,6 @@ export default index;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingBottom: 100,
   },
   header: {
     paddingTop: 60,
